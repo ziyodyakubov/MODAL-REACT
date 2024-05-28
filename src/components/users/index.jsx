@@ -58,7 +58,7 @@ function Table() {
                         <td>{item.phone}</td>
                         <td>{item.address}</td>
                         <td className='d-flex items-center justify-content-center text-center gap-3'>
-                          <Link to="/table">
+                          <Link to={`/users/${item.id}`}>
                           <box-icon name='show' type='solid' ></box-icon>
                           </Link> 
                           <box-icon name='edit-alt' onClick={()=>editable(item.id)} ></box-icon> 
