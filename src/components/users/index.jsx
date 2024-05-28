@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from "react-router-dom"
 import UserModal from "../modal"
 import { useState } from 'react'
 import 'boxicons'
@@ -57,9 +58,9 @@ function Table() {
                         <td>{item.phone}</td>
                         <td>{item.address}</td>
                         <td className='d-flex items-center justify-content-center text-center gap-3'>
-                          <Navlink to="/table">
+                          <Link to="/table">
                           <box-icon name='show' type='solid' ></box-icon>
-                          </Navlink> 
+                          </Link> 
                           <box-icon name='edit-alt' onClick={()=>editable(item.id)} ></box-icon> 
                           <box-icon className='text-center' onClick={()=>deleteUser(item.id)} type='solid' name='trash'></box-icon> 
                           </td>

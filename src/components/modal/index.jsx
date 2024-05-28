@@ -19,8 +19,7 @@ const UserModal = (props) => {
         let nimadir = {...form,id}
         props.users.push(nimadir)
         props.setUser([...props.users])
-       props.toggle(false)
-        e.target.reset()
+        props.toggle(false)
     }
     
     return (
