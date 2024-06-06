@@ -6,9 +6,10 @@ import 'boxicons'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Table() {
-  const [users, setUser] = useState([])
+  const [users, setUsers] = useState([])
   const [search,SearchUser] = useState("")
   const [Modal,setModal] = useState(false)
+  const [user,setUser] = useState({})
 
 
   const deleteUser = (id) =>{
@@ -16,19 +17,21 @@ function Table() {
     setUser([...new_users])
   }
 
-  // const editable = (id) =>{
-  //   if(result.id === id){
-  //     console.log(true)
-  //   }else{
-  //     console.log(false)
-  //   }
-  // }
+  const editable = (item) =>{
+    setUser(item)
+    setModal(true)
+  }
+
+  const toggle = () =>{
+    setUser({})
+    setModal(false)
+  }
 
      
 
   return (
     <>
-    <UserModal open={Modal} toggle={()=>setModal(false)} users={users} setUser={setUser}/>
+    <UserModal open={Modal} toggle={toggle} user={user} users={users} setUser={setUsers}/>
       <div className="container">
         <div className="row mt-5">
             <div className="col-md-9">
@@ -61,7 +64,7 @@ function Table() {
                           <Link to={`/users/${item.id}`}>
                           <box-icon name='show' type='solid' ></box-icon>
                           </Link> 
-                          <box-icon name='edit-alt' onClick={()=>editable(item.id)} ></box-icon> 
+                          <box-icon name='edit-alt' onClick={()=>editable(item)} ></box-icon> 
                           <box-icon className='text-center' onClick={()=>deleteUser(item.id)} type='solid' name='trash'></box-icon> 
                           </td>
                       </tr>
