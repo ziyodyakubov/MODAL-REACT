@@ -4,6 +4,8 @@ import UserModal from "../modal"
 import { useState } from 'react'
 import 'boxicons'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Button from '@mui/material/Button';
+
 
 function Table() {
   const [users, setUsers] = useState([])
@@ -13,8 +15,9 @@ function Table() {
 
 
   const deleteUser = (id) =>{
+    console.log(id)
     let new_users = users.filter(item=> item.id !== id)
-    setUser([...new_users])
+    setUsers([...new_users])
   }
 
   const editable = (item) =>{
@@ -75,7 +78,7 @@ function Table() {
             </div>
 
             <div className="col-md-3">
-                  <button className='btn btn-success' onClick={()=>setModal(true)}>Add user</button>
+                  <Button variant="contained" onClick={()=>setModal(true)}>Add user</Button>
             </div>      
         </div>
       </div>

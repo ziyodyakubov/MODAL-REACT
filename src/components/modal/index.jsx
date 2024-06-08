@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { nanoid } from 'nanoid'
 import { Modal, ModalBody, ModalFooter, ModalHeader } from "reactstrap";
+import Button from '@mui/material/Button';
+
 
 const UserModal = (props) => {
 
@@ -86,14 +88,11 @@ const UserModal = (props) => {
             </ModalBody>
 
             <ModalFooter>
-                <button
-                    id="form"
+
+                <Button variant="outlined" id="form"
                     type="submit"
                     className="btn btn-primary"
-                    form="todo"
-                >
-                    Add User
-                </button>
+                    form="todo">Add user</Button>
 
             </ModalFooter>
         </Modal>
